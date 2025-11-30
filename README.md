@@ -25,7 +25,7 @@ This script:
 •	cleans and harmonises month/year formats
 •	standardises instrument classifications
 •	builds a structured dataset with variables such as:
-o	Period, Currency, Instrument, Maturity, Instrument Detail, Value (MEUR)
+o	Period, Currency, Instrument, Maturity, Instrument Detail, Value
 •	exports the harmonised table for ingestion into the central statistical repository
 Used for: official monthly public debt compilation.
 ________________________________________
@@ -57,5 +57,5 @@ These tools support statistical production by:
 •	reducing operational risk
 •	reinforcing consistency across datasets
 •	automating repetitive data-intensive tasks
-They reflect hands-on experience in financial and government finance statistics, data quality assessment and process automation.
+They reflect hands-on experience in GFS statistics, data quality assessment and process automation.
 
