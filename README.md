@@ -12,7 +12,7 @@ The scripts in this repository perform three main functions:
 -	detection and correction of formatting anomalies;
 -	integration of multiple sheets and heterogeneous formats;
 -	preparation of period identifiers and metadata;
--	reconciliation with auxiliary datasets;
+-	reconciliation with auxiliary datasets.
 3. VBA automation for reporting processes. The VBA module automates the transformation of Excel inputs into the exact structured format required for ingestion into reporting databases, eliminating repetitive manual formatting.
 
 **Files in this repository**
