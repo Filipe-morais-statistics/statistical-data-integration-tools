@@ -54,14 +54,12 @@ df.insert(2, "Mes", mes)
 df["Mes2"] = np.where(df["Mes"] < 10, "0", "")
 df["Periodo"] = df["Ano"].astype(str) + "-" + df["Mes2"] + df["Mes"].astype(str)
 
-
 # altera ordem das colunas
 col_names_2 = ["Periodo", "Designacao", "Tipo_Metrica", "Valor"]
 df = df.reindex(columns=col_names_2)
 
 # altera ordem das linhas
 df = df.sort_values(["Designacao", "Tipo_Metrica"], ascending=[False, False])
-
 
 # Apenas para testes
 # df.to_excel(r"G:\aaa\3. Python\tabela.xlsx")
@@ -71,4 +69,5 @@ print("Foi criado uma estrutura de dados com os seguintes campos: ", df.columns)
 
 # output
 data["CGA_CarteiraTitulos"] = df
+
 #df.to_excel (r"G:\aaa\3. Python\Output_source.xlsx")
