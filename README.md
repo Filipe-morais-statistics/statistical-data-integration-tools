@@ -13,7 +13,7 @@ The scripts in this repository perform three main functions:
 -	integration of multiple sheets and heterogeneous formats;
 -	preparation of period identifiers and metadata;
 -	reconciliation with auxiliary datasets.
-3. VBA automation for reporting processes. The VBA module automates the transformation of Excel inputs into the exact structured format required for ingestion into reporting databases, eliminating repetitive manual formatting.
+3. VBA automation for reporting processes. The VBA module automates the transformation of Excel inputs into the structured format required for inclusion in reporting databases, eliminating repetitive manual formatting.
 
 **Files in this repository**
 
@@ -37,7 +37,7 @@ Used for: monthly public debt compilation.
 C. VBA-Module1.bas — Transformation of Excel into a reporting file. The VBA module:
 -	converts raw Excel information into a clean, standardised table;
 -	enforces column ordering, naming conventions and validation rules;
--	prepares files automatically for statistical reporting systems.
+- Prepares files automatically for statistical reporting systems, which then transmit data using the SDMX structure.
 Used for: pre-processing and transformation of reporting data before transmissions.
 
 **Programming tools used:**
