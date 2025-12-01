@@ -24,16 +24,9 @@ carregar_excel = tabulizer.excel.base.ExcelLoader.load(input_file)
 Folha = carregar_excel.get_worksheet_by_index(0)
 Folha2 = carregar_excel.get_worksheet_by_index(1)
 
-
-
-
-
-
-
 ##########################################
-#PRIMEIRA FOLHA
+#First sheet
 ##########################################
-
 
 RowMemberSet = {"left":"b","right":"c","top":10}
 ColMemberSet = {"top":6,"bottom":8,"left":"D"}
@@ -94,9 +87,6 @@ df.loc[~df['Mês'].isin(lista_meses), 'Mês'] = df['MêsAux'].str[5:7]
 #criar coluna Periodo
 df.insert(3,'Periodo',df.Ano+'-'+df.Mês)
 
-#Correção ao jan12 que está mal reportado pelo IGCP (formato incorreto)
-df.loc[df['Periodo'] == '2012-:0','Periodo']='2012-01'
-
 #Correção da caraterização dos instrumentos
 df.loc[df['Membro de colunas 1'] == 'Total 15=10+11+13+14', 'Membro de colunas 1'] = 'Total'
 df.loc[df['Membro de colunas 2'] == 'Total 10=1+5', 'Membro de colunas 2'] = 'Total'
@@ -133,7 +123,6 @@ df.loc[df['Membro de colunas 3'].isna(), 'Membro de colunas 3'] = 'Total'
 #Apaga colunas que não interessam
 df.drop(df.columns[[0,1,2,5,6,7]],axis=1,inplace=True)
 
-
 #Altera o nome das colunas
 df.columns.values[2] = 'Instrumento'
 df.columns.values[3] = 'Prazo_contratual'
@@ -143,15 +132,8 @@ df.columns.values[5] = 'Valor_MEUR'
 #Ordenar colunas
 df=df.reindex(columns=['Periodo','Divisa','Instrumento','Instrumento_detalhe','Prazo_contratual','Valor_MEUR'])
 
-
-
-
-
-
-
-
 ##########################################
-#SEGUNDA FOLHA
+#Second sheet
 ##########################################
 
 RowMemberSet = {"left":"b","right":"c","top":10}
@@ -199,8 +181,6 @@ df2.columns.values[5] = 'Valor_MEUR'
 #Ordenar colunas
 df2=df2.reindex(columns=['Periodo','Divisa','Instrumento','Instrumento_detalhe','Prazo_contratual','Valor_MEUR'])
 
-
-
 #CONCATENAR DUAS SHEETS
 final = pd.concat([df, df2], ignore_index=True, sort=False)
 
@@ -213,10 +193,7 @@ final=final.round(6)
 
 final.to_excel(r"G:\aaa\TabelaFinal.xlsx")
 
-
-
 data['DDE'] = final
-
 
 """
 errors = SourceVersionValidator.validate(
@@ -225,4 +202,5 @@ errors = SourceVersionValidator.validate(
     data=data
 )
 pprint.pprint(errors)
+
 """
