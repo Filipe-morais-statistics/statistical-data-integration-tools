@@ -17,27 +17,30 @@ The scripts in this repository perform three main functions:
 
 **Files in this repository**
 
-A. main_DDE.py — "Data source 1" integration. This script :
+A. main_DDE.py — "Data source 1" integration. This Python script:
 -	loads multiple Excel sheets from the "data source 1";
 -	extracts table structures using the tabulizer package;
 -	cleans and harmonises month/year formats;
 -	standardises instrument classifications;
 -	builds a structured dataset with variables (Period, Currency, Instrument, Maturity, Instrument Detail, Value);
 -	exports the harmonised table for ingestion into the central statistical repository.
+
 Used for: monthly public debt compilation.
 
-B. main_cga.py — "Data source 2" integration. This script:
+B. main_cga.py — "Data source 2" integration. This Python script:
 -	reads the monthly securities portfolio file of the "data source 2";
 -	cleans structure, removes totals and irrelevant lines;
 -	reshapes data from wide to long (nominal value vs market value);
 -	creates the Period variable based on the reporting date;
 -	builds a structured dataset with variables (Period, Security, Metric Type, Value).
+
 Used for: monthly public debt compilation.
 
-C. VBA-Module1.bas — Transformation of Excel into a reporting file. The VBA module:
+C. VBA-Module1.bas — Transformation of Excel into a reporting file. The VBA script:
 -	converts raw Excel information into a clean, standardised table;
 -	enforces column ordering, naming conventions and validation rules;
 - Prepares files automatically for statistical reporting systems, which then transmit data using the SDMX structure.
+
 Used for: pre-processing and transformation of reporting data before transmissions.
 
 **Programming tools used:**
