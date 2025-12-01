@@ -5,7 +5,7 @@ The tools were designed to reduce manual work, improve data quality and ensure c
 **Overview**
 
 The scripts in this repository perform three main functions:
-1. Automated ingestion of Excel-based data sources (Python). The Python files (main_DDE.py and main_cga.py) read raw Excel files from external providers, transform the data into harmonised structures, and export ready-to-load datasets for compilation systems.
+1. Automated ingestion of Excel-based data sources (Python). The Python files (main_DDE.py and main_cga.py) read raw Excel files from external providers, transform the data into harmonised structures, and export datasets ready to import in the compilation systems.
 2. Data cleaning, validation and structure harmonisation. The processes include:
 - time-series reconstruction;
 -	recoding and harmonisation of instrument classifications;
