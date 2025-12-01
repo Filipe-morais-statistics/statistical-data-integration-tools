@@ -2,11 +2,6 @@ Attribute VB_Name = "Module1"
 
 
 Sub ficheiro1()
-'
-' Macro4 Macro
-'
-' Keyboard Shortcut: Ctrl+q
-'
 
 Dim ficheiro1 As String
 Dim ficheiro As String
@@ -14,12 +9,7 @@ Dim ficheiro As String
 Application.ScreenUpdating = False
 
    Sheets("VAL_S13_C").Select
-    
-    'APAGA OUTPUT
-    
-    
     'ficheiro 1
-    
     ficheiro1 = "G:\aaaa\FicheirosRIE\3. carregaRIE_qfagg_valores_S13.xlsx"
     Workbooks.Open Filename:=ficheiro1
     ficheiro = ActiveWindow.Caption
@@ -36,41 +26,36 @@ Application.ScreenUpdating = False
     Range("A2").Select
     
     Windows("1. QFAGG.xlsm").Activate
-    
-   
-    
     Sheets("VAL_S13_C").Select
-    
 
 Dim Sh As Worksheet
 For Each Sh In Sheets(Array("VAL_S13_C", "VAL_S13_N"))
         Sheets("Per�odos a exportar").Select
         Columns("B:B").Select
         Selection.Copy
-           
-Sh.Select
+
+        Sh.Select
         Range("A1").Select
         ActiveSheet.Paste
                
-    ' obtem per�odo de in�cio e fim da exporta��o '####2024
-                Range("A45").Select
-                Selection.End(xlDown).Select
-                ActiveCell.Offset(0, 0).Range("A1").Select
-                linha = ActiveCell.Row
-                ActiveCell.Offset(0, 0).Range("A1").Select
-                Selection.End(xlDown).Select
-                ActiveCell.Offset(0, 0).Range("A1").Select
-                If Right(ActiveCell.Row, 5) > 9999 Then
+        Range("A45").Select
+        Selection.End(xlDown).Select
+        ActiveCell.Offset(0, 0).Range("A1").Select
+        linha = ActiveCell.Row
+        ActiveCell.Offset(0, 0).Range("A1").Select
+        Selection.End(xlDown).Select
+        ActiveCell.Offset(0, 0).Range("A1").Select
+        If Right(ActiveCell.Row, 5) > 9999 Then
                 linhafim = linha
-                Else
+        Else
                 linhafim = ActiveCell.Row
-                End If
+        End If
                 linha1 = linha & ":" & linha
     
   
-    Range("C32").Select
-    Range(Selection, Selection.End(xlToRight)).Select
-    Selection.Copy
+       Range("C32").Select
+       Range(Selection, Selection.End(xlToRight)).Select
+       Selection.Copy
     
     Windows(ficheiro).Activate
     Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
@@ -106,7 +91,6 @@ Sh.Select
     Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=True
     Windows("1. QFAGG.xlsm").Activate
-    
     
     celulaatual = ActiveCell.Offset(1, -1).Range("A1").Address 
                 If ActiveCell.Offset(1, -1).Range("A1").Value = vbNullString Then
@@ -153,19 +137,11 @@ While Not ActiveCell.Value = vbNullString
     
     'fim periodo
     
-    
     Windows(ficheiro).Activate
     
     Windows("1. QFAGG.xlsm").Activate
-    
-'___
-
-    
+   
     ActiveCell.Offset(0, 1).Range("A1").Select
-
-    
-    
-    
     Range(Selection, Selection.End(xlToRight)).Select
     Application.CutCopyMode = False
     Selection.Copy
@@ -179,24 +155,16 @@ While Not ActiveCell.Value = vbNullString
     Application.CutCopyMode = False
 Wend
 
-Windows(ficheiro).Activate
-ActiveCell.Offset(0, -2).Range("A1:B1").Select
-Selection.End(xlDown).Select
-ActiveCell.Offset(1, 0).Range("A1").Select
+    Windows(ficheiro).Activate
+    ActiveCell.Offset(0, -2).Range("A1:B1").Select
+    Selection.End(xlDown).Select
+    ActiveCell.Offset(1, 0).Range("A1").Select
 
-    
-
-Windows("1. QFAGG.xlsm").Activate
-
-
+    Windows("1. QFAGG.xlsm").Activate
 Next
-    
+
 Application.ScreenUpdating = True
-
-
-
 Windows(ficheiro).Activate
-
     Range("D4").Select
     Range(Selection, Selection.End(xlToRight)).Select
     Selection.Copy
@@ -207,7 +175,7 @@ Windows(ficheiro).Activate
     Selection.PasteSpecial Paste:=xlPasteAll, Operation:=xlNone, SkipBlanks _
         :=False, Transpose:=False
         
-ActiveWorkbook.Close SaveChanges:=True
+    ActiveWorkbook.Close SaveChanges:=True
 
 Windows("1. QFAGG.xlsm").Activate
 Worksheets("Menu").Activate
@@ -215,7 +183,4 @@ Range("M23") = Now()
 
 'MsgBox ("RIE completo S13")
 
-
 End Sub
-
-
