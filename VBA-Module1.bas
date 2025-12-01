@@ -1,6 +1,3 @@
-Attribute VB_Name = "Module1"
-
-
 Sub ficheiro1()
 
 Dim ficheiro1 As String
@@ -184,3 +181,4 @@ Range("M23") = Now()
 'MsgBox ("RIE completo S13")
 
 End Sub
+
